@@ -1,21 +1,28 @@
-var keyword;
+var keyword, keyword_proper;
 var name, imageURL, date, time, city, country, longitude, latitude, venue, purchaseURL, priceMin, priceCurrency;
-var resultList = [], savedResult, selection;
+var resultList = [], selection;
+
+//add firebase and initialize
+
 
 $("#submitButton").on("click", function(event) {
     event.preventDefault();
     keyword = $("#searchBox").val();
-    keyword = keyword.replace(" ", "+");
-    ticketSearch(keyword);
-    postResult();
+    keyword = keyword.toUpperCase();
+    
+    keyword_proper = keyword.replace(" ", "+");
+    ticketSearch(keyword_proper);
+    // postResult();
 
 })
 
-function ticketSearch(keyword) {
+function ticketSearch(keyword_proper) {
     $.ajax({
-        url: "https://app.ticketmaster.com/discovery/v2/events.json?size=5&apikey=UV7tg3MFc3j8tiYWVw0b5ffsRuC6hGLb&keyword=" + keyword,
+        url: "https://app.ticketmaster.com/discovery/v2/events.json?size=5&apikey=UV7tg3MFc3j8tiYWVw0b5ffsRuC6hGLb&keyword=" + keyword_proper,
         method: "GET"
       }).then(function(response) {
+
+        // console.log(response);
 
         for(var i = 0; i<response._embedded.events.length; i++ ){
             name = response._embedded.events[i].name;
@@ -50,49 +57,11 @@ function ticketSearch(keyword) {
         // console.log(resultList);
 
         localStorage.setItem("resultList", JSON.stringify(resultList));
-    
-      });
+    });
+
+
 }
 
-function postResult() {
 
-    savedResult = localStorage.getItem("resultList");
-    savedResult = JSON.parse(savedResult);
-
-    // console.log(savedResult);
-
-    for (var j = 0; j< savedResult.length; j++) {
-
-        var optionHolder = $("<div>").attr("class", "optionHolder");
-        optionHolder.attr("id", j);
-        var optionDate = $("<div>").attr("class", "optionDate");
-        optionDate.attr("id", ""+j);
-        var optionTime = $("<div>").attr("class", "optionTime");
-        optionTime.attr("id", "time"+j);
-        var optionLoc = $("<div>").attr("class", "optionLoc");
-        optionLoc.attr("id", "loc"+j);
-        var optionVen = $("<div>").attr("class", "optionVen");
-        optionVen.attr("id", "ven"+j);
-        var optionLink = $("<botton>").attr("class", "optionLink");
-
-
-        // console.log(savedResult[j].Date);
-        $("#date"+j).text(savedResult[j].Date);
-        // console.log(savedResult[j].Time);
-        $("#time"+j).text(savedResult[j].Time);
-        // console.log(savedResult[j].City + ", " + savedResult[j].Country);
-        $("#loc"+j).text(savedResult[j].City + ", " + savedResult[j].Country);
-        // console.log(savedResult[j].Venue);
-        $("#ven"+j).text(savedResult[j].Venue);
-
-    }
-}
-
-$(".optionLink").on("click", function(event) {
-    event.preventDefault;
-    selection = $(this).parent().attr("id");
-    // console.log(selection);
-    // console.log($("#date4").length);
-    window.location = 'https://google.ca';
-
-})
+// keyword and resultList[0].Image to firebase
+// ppl's recent searches, make them searchable

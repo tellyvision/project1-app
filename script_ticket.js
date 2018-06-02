@@ -61,7 +61,20 @@ function postResult() {
 
     // console.log(savedResult);
 
-    for (var j = 0; j< 5; j++) {
+    for (var j = 0; j< savedResult.length; j++) {
+
+        var optionHolder = $("<div>").attr("class", "optionHolder");
+        optionHolder.attr("id", j);
+        var optionDate = $("<div>").attr("class", "optionDate");
+        optionDate.attr("id", ""+j);
+        var optionTime = $("<div>").attr("class", "optionTime");
+        optionTime.attr("id", "time"+j);
+        var optionLoc = $("<div>").attr("class", "optionLoc");
+        optionLoc.attr("id", "loc"+j);
+        var optionVen = $("<div>").attr("class", "optionVen");
+        optionVen.attr("id", "ven"+j);
+        var optionLink = $("<botton>").attr("class", "optionLink");
+
 
         // console.log(savedResult[j].Date);
         $("#date"+j).text(savedResult[j].Date);
@@ -75,11 +88,11 @@ function postResult() {
     }
 }
 
-$(".link").on("click", function(event) {
+$(".optionLink").on("click", function(event) {
     event.preventDefault;
     selection = $(this).parent().attr("id");
-    console.log(selection);
-    console.log($("#date4").length);
-    // window.location = 'https://google.ca';
+    // console.log(selection);
+    // console.log($("#date4").length);
+    window.location = 'https://google.ca';
 
 })

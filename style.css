@@ -2,10 +2,15 @@
 body {
     background-image:url("bg-01.png");
     background-color:#e6dede; 
+    background-repeat: repeat;
 }
 
 
 /* NAVIGATION */
+
+.nav {float: right;
+    margin-top: 25px;
+}
 
 .top-nav {
     font-family: 'Pacifico', cursive, times;
@@ -19,24 +24,29 @@ body {
 }
 
 .navbar-brand{ 
-    font-size:40px;
-    
+    font-size:40px;   
 }
 
+.nav-links {
+    padding-left:10px;
+    font-size:20px;
+}
 
 /* SEARCHBAR */
 
 .space-body {
-    margin:120px;
+    margin:180px;
     padding:40px;  
+}
+
+h2 {
+    font-size:24px;
+    text-align:justify;
 }
 
 .block-header {
     font-family:Arial; 
     font-style:italic;
-}
-
-.block-header {
     height:60px;
+    font-size:24;
 }
-

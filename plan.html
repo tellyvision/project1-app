@@ -1,14 +1,8 @@
 <!Doctype.html>
 
 <html lang="en-us">
-  <head>
-    <div id="service-helper"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2fqdkmA9qUXkDg9zKMF2wmnwN4IkykSg&libraries=places&callback=initialize">
-    </script>
 
-    
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -19,21 +13,43 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   
     <!-- Our own CSS stylesheet -->
-    <link rel="stylesheet" href="style.css" media="screen">
+    <link rel="stylesheet" href="Assets/Styles/style.css" media="screen">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-</html>
+
+    <!--Delete below after putting into style sheet-->
+    <style>
+        /* Set the size of the div element that contains the map */
+       #map {
+         height: 50%;  /* The height is 400 pixels */
+         width: 50%;  /* The width is the width of the web page */
+        }
+     </style>
+
+</head>
 
 <body>
-    <nav class="top-nav navbar navbar-expand-lg navbar-dark navbar-fixed-top">
-  
-        <div class="nav-logo">
-          <h1>Concert Bird <img src="birdpairs.png"></h1>
-        </div>
+   
 
-        <div class="nav-links">
-          <a href="home.html">Home</a>
-          <a href="band.html">Artist</a>
-        </div>
-   </nav>
+   <nav class="top-nav navbar navbar-expand-lg navbar-dark navbar-fixed-top">
+  
+   <div class="nav-logo">
+      <h1>Concert Bird <img src="assets/Images/birdpairs.png"></h1>
+   </div>
+
+   <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="band.html">Artist</a>
+   </div>
+
+  </nav>
+
+  <div id="service-helper"></div>
+  <div id="restaurantList"></div>
+  <div id="map"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2fqdkmA9qUXkDg9zKMF2wmnwN4IkykSg&libraries=places&callback=initialize"></script>
+  <script src="Assets/Scripts/scriptGoogleRestaurants.js"></script>
 
 </body>
+</html>

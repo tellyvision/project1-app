@@ -1,11 +1,6 @@
-// place the following code in index.html
-// <div id="service-helper"></div>
-// <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-// <script async defer
-//src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2fqdkmA9qUXkDg9zKMF2wmnwN4IkykSg&libraries=places&callback=initialize">
-//</script>
 
-//change var down below
+var restaurantResultList = [], savedResult, selection;
+
 function initialize() {
     initMap();
     getRelevantGoogleReviews();
@@ -25,11 +20,11 @@ window.getRelevantGoogleReviews = function() {
 function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
-        restaurantName = results[i].name
-        restaurantAddress  = results[i].vicinity
-        restaurantRating  = results[i].rating
-        lat = results[i].geometry.location.lat();
-        lng = results[i].geometry.location.lng();
+        var restaurantName = results[i].name
+        var restaurantAddress  = results[i].vicinity
+        var restaurantRating  = results[i].rating
+        var lat = results[i].geometry.location.lat();
+        var lng = results[i].geometry.location.lng();
 
         restaurantResultList[i] = {
             name: restaurantName,
@@ -39,29 +34,81 @@ function callback(results, status) {
             lng: lng,
         }
         
-        localStorage.setItem("resultList", JSON.stringify(resultList));
+        localStorage.setItem("restaurantResultList", JSON.stringify(restaurantResultList));
+        savedResult = localStorage.getItem("restaurantResultList");
+        savedResult = JSON.parse(savedResult);
+
 
         var restaurantDiv = $("<div>");
-        var restaurantName = $("<div>").text(restaurantName).addClass("restaurantName")
-        var restaurantAddress  = $("<div>").text(restaurantAddress).addClass("restaurantAddress")
-        var restaurantRating  = $("<div>").text(restaurantRating).addClass("restaurantRating")
+        var restaurantNameDiv = $("<div>").text(restaurantName).addClass("restaurantName")
+        var restaurantAddressDiv  = $("<div>").text(restaurantAddress).addClass("restaurantAddress")
+        var restaurantRatingDiv  = $("<div>").text(restaurantRating).addClass("restaurantRating")
 
-        restaurantDiv.append(restaurantName)
-        restaurantDiv.append(restaurantAddress)
-        restaurantDiv.append(restaurantRating)
+        restaurantDiv.append(restaurantNameDiv)
+        restaurantDiv.append(restaurantAddressDiv)
+        restaurantDiv.append(restaurantRatingDiv)
         $("#restaurantList").append(restaurantDiv)
+
+        
         }
     }
 }
 
+console.log(restaurantResultList)
+
+// //NO INFO BOX
+// function initMap() {
+//   // The location of concert
+//   var concert = {lat: -33.8665433, lng: 151.1956316};
+//   // The map, centered at concert
+//   var map = new google.maps.Map(
+//       document.getElementById('map'), {zoom: 15 , center: concert});
+//   // The marker, positioned at concert
+
+//     var marker1 = new google.maps.Marker({position: concert, map: map, title: 'concert location'
+//         });
+// }
 
 
 function initMap() {
-    // The location of Uluru
-    var uluru = {lat: -25.344, lng: 131.036};
-    // The map, centered at Uluru
-    var map = new google.maps.Map(
-        document.getElementById('map'), {zoom: 4, center: uluru});
-    // The marker, positioned at Uluru
-    var marker = new google.maps.Marker({position: uluru, map: map});
-}
+    var uluru = {lat: -25.363, lng: 131.044};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 15,
+      center: uluru
+    });
+
+    var contentString = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+        '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+        '<div id="bodyContent">'+
+        '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+        'sandstone rock formation in the southern part of the '+
+        'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+        'south west of the nearest large town, Alice Springs; 450&#160;km '+
+        '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+        'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+        'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+        'Aboriginal people of the area. It has many springs, waterholes, '+
+        'rock caves and ancient paintings. Uluru is listed as a World '+
+        'Heritage Site.</p>'+
+        '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+        'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+        '(last visited June 22, 2009).</p>'+
+        '</div>'+
+        '</div>';
+
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString,
+      maxWidth: 200
+    });
+
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map,
+      title: 'Uluru (Ayers Rock)'
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  }

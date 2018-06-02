@@ -1,14 +1,8 @@
 <!Doctype.html>
 
 <html lang="en-us">
-  <head>
-    <div id="service-helper"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2fqdkmA9qUXkDg9zKMF2wmnwN4IkykSg&libraries=places&callback=initialize">
-    </script>
 
-    
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -19,13 +13,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   
     <!-- Our own CSS stylesheet -->
-    <link rel="stylesheet" href="style.css" media="screen">
+    <link rel="stylesheet" href="assets/styles/style-plan.css" media="screen">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
 </html>
 
 <body>
+  <!-- NAVBAR -->
   <nav class="top-nav navbar navbar-expand-lg navbar-dark navbar-fixed-top">
-  
     <div class="nav-logo">
       <h1>Concert Bird <img src="birdpairs.png"></h1>
     </div>
@@ -36,7 +31,7 @@
     </div>
   </nav>
 
-   <!-- div for selected ticket information !-->
+  <!-- div for selected ticket information !-->
   <div class="container">
 
     <div class="optionHolder" id="selectedHolder">
@@ -50,4 +45,20 @@
   </div>
   
 
+  <!-- CLICK RESULT -->
+
+  <div class="container col-md-6">
+
+  </div>
+   
+
+  <div id="service-helper"></div>
+  <div id="restaurantList"></div>
+  <div id="map"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2fqdkmA9qUXkDg9zKMF2wmnwN4IkykSg&libraries=places&callback=initialize"></script>
+  <script src="Assets/Scripts/scriptGoogleRestaurants.js"></script>
+
 </body>
+</html>

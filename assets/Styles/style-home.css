@@ -1,0 +1,54 @@
+/* BACKGROUND */
+body {
+    background-image:url("../images/bg-01.png");
+    background-color:#e6dede; 
+    background-repeat: repeat;
+    background-size:250px;
+}
+
+
+/* NAVIGATION */
+
+.nav {float: right;
+    margin-top: 25px;
+}
+
+.top-nav {
+    font-family: 'Pacifico', cursive, times;
+    color: white;
+    background-color:#1b2a41;
+    height:85px;
+}
+
+.nav-logo {
+    margin:0 auto;
+}
+
+.navbar-brand{ 
+    font-size:40px;   
+}
+
+.nav-links {
+    padding-left:10px;
+    font-size:20px;
+}
+
+/* SEARCHBAR */
+
+.space-body {
+    margin:180px;
+    padding:40px;  
+}
+
+h2 {
+    font-size:24px;
+    text-align:justify;
+}
+
+.block-header {
+    font-family:Arial; 
+    font-style:italic;
+    height:30px;
+    font-size:24;
+    text-align:center;
+}

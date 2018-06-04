@@ -27,13 +27,49 @@ h2 {
 }
 
 
-.optionHolder {
+#optionHolder {
     background-color: white;
-    height:60px;   
+    height:60px;
+    display: flex;
+    flex-direction: row;   
+    justify-content: space-between
 }
 
 .space-marg {
     margin-top:40px;
+}
+
+.result-bar-inner1{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: flex-start */
+    
+}
+
+.div1-1{
+    width: 30%;
+}
+
+.div1-2{
+    width: 70%;
+}
+
+.div1 {
+    width: 80%
+}
+
+.div2 {
+    width: 20%
+}
+
+
+.result-bar-inner2{
+    display: flex;
+    flex-direction: column;
+}
+
+.div1-2{
+    margin-left: 2%;
 }
 
 /* MAP & RESTAURANT */

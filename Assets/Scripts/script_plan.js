@@ -32,7 +32,7 @@ function initialize() {
   
 window.getRelevantGoogleReviews = function() {
     var service = new google.maps.places.PlacesService($('#service-helper').get(0));
-    var concert = new google.maps.LatLng(savedConcert.lat, savedConcert.lng);
+    var concert = new google.maps.LatLng(selectionLat, selectionLong);
     var request = {
     location: concert,
     radius: '500',
@@ -72,9 +72,7 @@ function callback(results, status) {
             $("#restaurantList").append(restaurantDiv)
         }
     }
-
     initMap();
-
 }
 
 // //NO INFO BOX
@@ -102,7 +100,7 @@ function initMap() {
 
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 15,
-        center: new google.maps.LatLng(savedConcert.lat, savedConcert.lng),
+        center: new google.maps.LatLng(selectionLat, selectionLong),
         mapTypeId: google.maps.MapTypeId.ROADMAP
     });
   
@@ -129,7 +127,7 @@ function initMap() {
     }
 
     marker = new google.maps.Marker({
-        position: new google.maps.LatLng(savedConcert.lat, savedConcert.lng),
+        position: new google.maps.LatLng(selectionLat, selectionLong),
         map: map,
         icon: "../assets/images/birdpairs.png"
         //icon: "https://clipart.info/images/ccovers/1495916677round-star-png-image-yellow.png",

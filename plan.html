@@ -6,39 +6,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
+
     <title>Concert Bird</title>
-  
+
     <!-- Boostrap Stylesheet -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  
+
     <!-- Our own CSS stylesheet -->
     <link rel="stylesheet" href="assets/styles/style-plan.css" media="screen">
     <link rel="stylesheet" href="assets/styles/style-all.css" media="screen">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+   </head>
 
-  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="top-nav navbar navbar-expand-lg navbar-dark navbar-fixed-top">
+      <div class="nav-logo">
+        <h1>Concert Bird <img src="assets/images/birdpairs.png"></h1>
+      </div>
 
-<body>
-  <!-- NAVBAR -->
-  <nav class="top-nav navbar navbar-expand-lg navbar-dark navbar-fixed-top">
-    <div class="nav-logo">
-      <h1>Concert Bird <img src="assets/images/birdpairs.png"></h1>
-    </div>
-    <div class="nav-links">
-      <a href="home.html" id="shift-left">Home</a>
-      <a href="band.html">Band</a>
-    </div>
-  </nav>
+      <div class="nav-links">
+        <a href="home.html" id="shift-left">Home</a>
+        <a href="band.html">Band</a>
+      </div>
+    </nav>
 
-  <!-- div for selected ticket information !-->
-
+    <!-- div for selected ticket information !-->
     <section class="container col-md-6">
       <div>
         <h2>Search Result for: <span id="usr-search"></span></h2>
       </div>
   
-      <div class="space-marg rounded border border-secondary" id="optionHolder">
+      <div class="space-marg rounded border border-secondary" id="selectedHolder">
         <div class="result-bar-inner1 div1">
           <div class="result-bar-inner2 div1-1">
             <div id="selectedDate"></div>
@@ -52,29 +51,34 @@
 
         <div class="result-bar-inner1 div2" id="selectedLinkHolder">
           <button id="selectedLink">Click To Purchase</button>
-        </div>    
-          
-          
+        </div>      
       </div>   
     </section>
 
-  <!-- CLICK RESULT -->
 
-  <div id="service-helper"></div> 
-
-  <div class="container mb-5">
-    <div class="row bg-white">
-      <div class="col scroll-box" id="restaurantList"></div>
-      <div class="col" id="map"><div>
-    </div>
-  </div> 
+    <!-- CLICK RESULT -->
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div id="service-helper"></div>
+          <div id="restaurantList" class="boarder rounded border-secondary"><h2>Restaurants Nearby</h2></div>
+        </div>
+        <div class="col-md-6" id="map">
+        </div>
+      </div>
+    </div>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2fqdkmA9qUXkDg9zKMF2wmnwN4IkykSg&libraries=places&callback=initialize"></script>
+    <script src="Assets/Scripts/script_plan.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2fqdkmA9qUXkDg9zKMF2wmnwN4IkykSg&libraries=places&callback=initialize"></script>
+  
   <script src="Assets/Scripts/script_planTicket.js"></script>
   <script src="Assets/Scripts/scriptGoogleRestaurants.js"></script>
   
 
-</body>
+  </body>
 </html>

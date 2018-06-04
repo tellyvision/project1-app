@@ -56,7 +56,17 @@ h2 {
     background-color: white;
     padding:10px;
     margin: 20px 0px;
+<<<<<<< HEAD
     border: 2px solid rgba(0, 0, 0, 0.1);
+=======
+
+.scroll-box {
+    background: #f4f4f4;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    height: 400px; 
+    padding: 15px;
+    overflow-y: scroll
+>>>>>>> d2da6d58d56f04ffb1cba7d6c23de26851b62a6e
 }
 
 

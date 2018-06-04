@@ -93,26 +93,27 @@ function initMap() {
 
 
 
-    // for (i = 0; i < savedRest.length; i++) { 
-    //     marker = new google.maps.Marker({
-    //         position: new google.maps.LatLng(savedRest[i].lat, savedRest[i].lng),
-    //         map: map
-    //     });
+    for (i = 0; i < savedRest.length; i++) { 
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(savedRest[i].lat, savedRest[i].lng),
+            map: map
+        });
 
-    //     //console.log(savedRest[i].lat)
+        //console.log(savedRest[i].lat)
 
-    //     google.maps.event.addListener(marker, 'click', (function(marker, i) {
-    //         return function() {
-    //         infowindow.setContent(savedRest[i].name);
-    //         infowindow.open(map, marker);
-    //         }
-    //     })(marker, i));
-    // }
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+            infowindow.setContent(savedRest[i].name);
+            infowindow.open(map, marker);
+            }
+        })(marker, i));
+    }
 
     marker = new google.maps.Marker({
         position: new google.maps.LatLng(savedConcert.lat, savedConcert.lng),
         map: map,
-        icon: "https://clipart.info/images/ccovers/1495916677round-star-png-image-yellow.png",
+        icon: "../assets/images/birdpairs.png"
+        //icon: "https://clipart.info/images/ccovers/1495916677round-star-png-image-yellow.png",
     });
 
     google.maps.event.addListener(marker, 'click', (function(marker, i) {

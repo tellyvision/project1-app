@@ -5,6 +5,7 @@ var restaurantResultList = [], savedResult, selectionData, selectionIndex, selec
 savedResult = localStorage.getItem("resultList");
 selectionIndex = localStorage.getItem("selectedIndex");
 savedResult = JSON.parse(savedResult);
+savedKeyword = localStorage.getItem("keyword");
 
 selectionData = savedResult[selectionIndex];
 selectionLong = selectionData.Long;
@@ -14,13 +15,14 @@ selectionLat = parseFloat(selectionLat);
 
 console.log(selectionData + selectionLong +selectionLat);
 
+$("#usr-search").text(savedKeyword);
 $("#selectedDate").text(selectionData.Date);
 $("#selectedTime").text(selectionData.Time);
 $("#selectedLoc").text(selectionData.City + " " + selectionData.Country);
 $("#selectedVen").text(selectionData.Venue);
 
 $("#selectedLink").on("click", function() {
-  window.location.href(selectionData.Purchase);
+  window.location.replace(selectionData.Purchase);
 })
 
 // taking long and lat info of the selected results

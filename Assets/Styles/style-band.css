@@ -2,12 +2,6 @@
     box-sizing:border-box;
 }
 
-
-.nav-links {
-    padding-right: 10px;
-    font-size: 20px;
-}
-
 /* SEARCHBAR */
 
 .space-body {
@@ -33,18 +27,19 @@ h2 {
 
 .container {
     margin:0 auto;
-    margin-top:100px;
+    margin-top:50px;
 }
 .optionHolder {
     background-color: white;
-    height:60px;
+    height:75px;
     display: flex;
     flex-direction: row;   
     justify-content: space-between; 
     width: 100%;
+    padding: 10px;
 }
 .space-marg {
-    margin-top:40px;
+    margin-top:20px;
 }
 
 .option-bar-inner1{

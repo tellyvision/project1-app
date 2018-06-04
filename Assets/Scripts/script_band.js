@@ -47,7 +47,7 @@ function postResult() {
         var optionVen = $("<div>").attr("id", "optionVen"+j);
         optionVen.text(savedResult[j].Venue);
     
-        var optionLink = $("<button>").attr("class", "optionLink");
+        var optionLink = $("<button>").attr("class", "optionLink btn btn-primary");
         optionLink.text("Click For Details")
     
         inner2_div1_1.html(optionDate);

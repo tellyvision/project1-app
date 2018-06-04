@@ -19,7 +19,7 @@ body {
     font-family: 'Pacifico', cursive, times;
     color: white;
     background-color: #1b2a41;
-    height: 85px;
+    height: 100px;
 }
 
 .nav-logo {
@@ -28,4 +28,16 @@ body {
 
 .navbar-brand { 
     font-size: 40px;   
+}
+
+#usr-search {
+    font-size: 30px;
+    text-align: justify;
+    font-family: sans-serif;
+    font-weight: bold
+}
+
+.nav-links {
+    font-size: 20px;
+    padding: 0px 10px;
 }

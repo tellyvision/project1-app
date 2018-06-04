@@ -5,10 +5,11 @@ postResult();
 function postResult() {
 
     savedResult = localStorage.getItem("resultList");
-    savedKeyword = localStorage.getItem("keyword")
+    savedKeyword = localStorage.getItem("keyword");
     savedResult = JSON.parse(savedResult);
 
     console.log(savedResult);
+    console.log(savedKeyword);
 
     for (var j = 0; j< savedResult.length; j++) {
 
@@ -41,8 +42,8 @@ function postResult() {
         optionHolder.append(optionVen);
         optionHolder.append(optionLink);
 
-        $("#keyword").text(savedKeyword);
-        $("#container").append(optionHolder);
+        $("#usr-search").text(savedKeyword);
+        $("#small-container").append(optionHolder);
 
 
     }
@@ -53,5 +54,6 @@ $(document).on("click",'.optionLink',function(event) {
     selection = $(this).parent().attr("id");
     selection = parseInt(selection);
     localStorage.setItem("selectedIndex", selection);
+    window.location.href = "./plan.html";
 
 })

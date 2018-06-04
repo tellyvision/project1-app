@@ -16,9 +16,9 @@ var resultList = [], selection;
 // var database = firebase.database();
 
 
-$("#search-bar").on("click", function(event) {
+$("#search-button").on("click", function(event) {
     event.preventDefault();
-    keyword = $("#searchBox").val();
+    keyword = $("#search-bar").val();
     keyword = keyword.toUpperCase();
     
     keyword_proper = keyword.replace(" ", "+");

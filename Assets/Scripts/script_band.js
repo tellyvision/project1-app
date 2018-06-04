@@ -65,14 +65,14 @@ function postResult() {
 
         $("#usr-search").text(savedKeyword);
         $("#small-container").append(optionHolder);
-
+        console.log($(this).parent().parent().attr("id"))
 
     }
 }
 
 $(document).on("click",'.optionLink',function(event) {
     event.preventDefault;
-    selection = $(this).parent().attr("id");
+    selection = $(this).parent().parent().attr("id");
     selection = parseInt(selection);
     localStorage.setItem("selectedIndex", selection);
     window.location.href = "./plan.html";

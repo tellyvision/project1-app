@@ -21,10 +21,10 @@ h2 {
 
 /* Search Result  */
 
-.container {
+/* .container {
     margin: 0 auto;
     margin-top: 100px;
-}
+} */
 
 
 .optionHolder {
@@ -38,20 +38,29 @@ h2 {
 
 /* MAP & RESTAURANT */
 
+.restaurantName {
+    font-weight: bold
+}
+
 #map {
-    height: 400px;
-    width: 50%; 
+    height: 500px;
+    width: 100%; 
+    float: left;
+    margin: 20px 0px;
    }
 
-#restaurantList,
-#service-helper, {
-    height:400px;
-}
+#restaurantList {
+    float: left;
+    height:500px;
+    overflow:auto;
+    background-color: white;
+    padding:10px;
+    margin: 20px 0px;
 
 .scroll-box {
     background: #f4f4f4;
     border: 2px solid rgba(0, 0, 0, 0.1);
-    height: 400px; /* maximum height of the box, feel free to change this! */
+    height: 400px; 
     padding: 15px;
     overflow-y: scroll
 }

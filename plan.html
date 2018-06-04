@@ -50,20 +50,22 @@
     </section>
 
   <!-- CLICK RESULT -->
-
-  <div id="service-helper"></div> 
-
-  <div class="container mb-5">
-    <div class="row bg-white">
-      <div class="col scroll-box" id="restaurantList"></div>
-      <div class="col" id="map"><div>
+  
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div id="service-helper"></div>
+        <div id="restaurantList" class="boarder rounded border-secondary"><h2>Restaurants Nearby</h2></div>
+      </div>
+      <div class="col-md-6" id="map">
+      </div>
     </div>
   </div> 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2fqdkmA9qUXkDg9zKMF2wmnwN4IkykSg&libraries=places&callback=initialize"></script>
-  <script src="Assets/Scripts/scriptGoogleRestaurants.js"></script>
+  <script src="Assets/Scripts/script_plan.js"></script>
 
 </body>
 </html>

@@ -1,17 +1,18 @@
-var savedResul, selection;
+var savedResult, savedKeyword, selection;
 
 postResult();
 
 function postResult() {
 
     savedResult = localStorage.getItem("resultList");
+    savedKeyword = localStorage.getItem("keyword")
     savedResult = JSON.parse(savedResult);
 
     console.log(savedResult);
 
     for (var j = 0; j< savedResult.length; j++) {
 
-        var optionHolder = $("<div>").attr("class", "optionHolder");
+        var optionHolder = $("<div>").attr("class", "optionHolder space-marg rounded border border-secondary");
         optionHolder.attr("id", j);
         var optionDate = $("<div>").attr("class", "optionDate");
         optionDate.attr("id", "date"+j);
@@ -40,6 +41,7 @@ function postResult() {
         optionHolder.append(optionVen);
         optionHolder.append(optionLink);
 
+        $("#keyword").text(savedKeyword);
         $("#container").append(optionHolder);
 
 

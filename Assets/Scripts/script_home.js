@@ -3,15 +3,27 @@ var name, imageURL, date, time, city, country, longitude, latitude, venue, purch
 var resultList = [], selection;
 
 //add firebase and initialize
+// var config = {
+//     apiKey: "AIzaSyD5BqbKtmkJgORf30vyWK00xdHPDikCylo",
+//     authDomain: "chatapp-may16.firebaseapp.com",
+//     databaseURL: "https://chatapp-may16.firebaseio.com",
+//     projectId: "chatapp-may16",
+//     storageBucket: "chatapp-may16.appspot.com",
+//     messagingSenderId: "117485271119"
+// };
+    
+// firebase.initializeApp(config);
+// var database = firebase.database();
 
 
-$("#submitButton").on("click", function(event) {
+$("#submitButtonHome").on("click", function(event) {
     event.preventDefault();
     keyword = $("#searchBox").val();
     keyword = keyword.toUpperCase();
     
     keyword_proper = keyword.replace(" ", "+");
     ticketSearch(keyword_proper);
+    // updateHistory();
     // postResult();
 
 })
@@ -57,11 +69,33 @@ function ticketSearch(keyword_proper) {
         // console.log(resultList);
 
         localStorage.setItem("resultList", JSON.stringify(resultList));
+        localStorage.setItem("keyword", keyword);
+
+        // database.ref().push({
+        //     keyword: keyword,
+        //     image: imageURL
+        // });
+
+        window.location.href("../../band.html");
+
     });
 
 
 }
 
+$(document).on("click", ".optionLink", function(event) {
+    event.preventDefault;
+    selection = $(this).parent().attr("id");
+    selection = parseInt(selection);
+    localStorage.setItem("selectedIndex", selection);
+    
 
-// keyword and resultList[0].Image to firebase
+})
+
+// function updateHistory() {
+
+
+
+// }
+
 // ppl's recent searches, make them searchable

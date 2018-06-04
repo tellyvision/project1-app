@@ -22,7 +22,7 @@ h2 {
 
 #selectedHolder {
     background-color: white;
-    height:75px;
+    height:auto;
     display: flex;
     flex-direction: row;   
     justify-content: space-between;

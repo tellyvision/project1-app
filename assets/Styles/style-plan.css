@@ -12,7 +12,6 @@ h2 {
 }
 
 .nav-links {
-    padding-left:10px;
     font-size:20px;
 }
 
@@ -37,7 +36,7 @@ h2 {
     margin-top:40px;
 }
 
-/* Map */
+/* MAP & RESTAURANT */
 
 #map {
     height: 400px;
@@ -45,7 +44,17 @@ h2 {
    }
 
 #restaurantList,
-#map, {
-    float: left;
-   
+#service-helper, {
+    height:400px;
 }
+
+.scroll-box {
+    background: #f4f4f4;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    height: 400px; /* maximum height of the box, feel free to change this! */
+    padding: 15px;
+    overflow-y: scroll
+}
+
+
+

@@ -6,67 +6,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
+
     <title>Concert Bird</title>
-  
+
     <!-- Boostrap Stylesheet -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  
+
     <!-- Our own CSS stylesheet -->
     <link rel="stylesheet" href="assets/styles/style-plan.css" media="screen">
     <link rel="stylesheet" href="assets/styles/style-all.css" media="screen">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+   </head>
 
-</html>
-
-<body>
-  <!-- NAVBAR -->
-  <nav class="top-nav navbar navbar-expand-lg navbar-dark navbar-fixed-top">
-    <div class="nav-logo">
-      <h1>Concert Bird <img src="assets/images/birdpairs.png"></h1>
-    </div>
-
-    <div class="nav-links">
-      <a href="home.html" id="shift-left">Home</a>
-      <a href="band.html">Band</a>
-    </div>
-  </nav>
-
-  <!-- div for selected ticket information !-->
-    <section class="container col-md-6">
-
-      <div>
-        <h2>Search Result for: <span id="usr-search"></span></h2>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="top-nav navbar navbar-expand-lg navbar-dark navbar-fixed-top">
+      <div class="nav-logo">
+        <h1>Concert Bird <img src="assets/images/birdpairs.png"></h1>
       </div>
-  
-      
-      <div class="optionHolder space-marg rounded border border-secondary">
-          <div id="selectedHolder">
-              <div class="optionDate" id="selectedDate"></div>
-              <div class="optionTime" id="selectedTime"></div>
-              <div class="optionLoc" id="selectedLoc"></div>
-              <div class="optionVen" id="selectedVen"></div>
-              <div class="optionLink" id="selectedLink"></div>
-            </div>
-      </div>   
-    </section>
 
-  <!-- CLICK RESULT -->
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div id="service-helper"></div>
-        <div id="restaurantList" class="boarder rounded border-secondary"><h2>Restaurants Nearby</h2></div>
+      <div class="nav-links">
+        <a href="home.html" id="shift-left">Home</a>
+        <a href="band.html">Band</a>
       </div>
-      <div class="col-md-6" id="map">
+    </nav>
+
+    <!-- div for selected ticket information !-->
+      <section class="container col-md-6">
+
+        <div>
+          <h2>Search Result for: <span id="usr-search"></span></h2>
+        </div>
+
+
+        <div class="optionHolder space-marg rounded border border-secondary">
+            <div id="selectedHolder">
+                <div class="optionDate" id="selectedDate"></div>
+                <div class="optionTime" id="selectedTime"></div>
+                <div class="optionLoc" id="selectedLoc"></div>
+                <div class="optionVen" id="selectedVen"></div>
+                <div class="optionLink" id="selectedLink"></div>
+              </div>
+        </div>   
+      </section>
+
+    <!-- CLICK RESULT -->
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div id="service-helper"></div>
+          <div id="restaurantList" class="boarder rounded border-secondary"><h2>Restaurants Nearby</h2></div>
+        </div>
+        <div class="col-md-6" id="map">
+        </div>
       </div>
-    </div>
-  </div>  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2fqdkmA9qUXkDg9zKMF2wmnwN4IkykSg&libraries=places&callback=initialize"></script>
-  <script src="Assets/Scripts/script_plan.js"></script>
+    </div>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2fqdkmA9qUXkDg9zKMF2wmnwN4IkykSg&libraries=places&callback=initialize"></script>
+    <script src="Assets/Scripts/script_plan.js"></script>
 
 
-</body>
+  </body>
 </html>

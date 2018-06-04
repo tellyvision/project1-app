@@ -57,22 +57,20 @@ function postResult() {
     
         inner1_div1.html(inner2_div1_1);
         inner1_div1.append(inner2_div1_2);
-    
-        inner1_div2.html(optionLink);
 
         optionHolder.html(inner1_div1);
         optionHolder.append(inner1_div2);
+        optionHolder.append(optionLink);
 
         $("#usr-search").text(savedKeyword);
         $("#small-container").append(optionHolder);
-        console.log($(this).parent().parent().attr("id"))
 
     }
 }
 
 $(document).on("click",'.optionLink',function(event) {
     event.preventDefault;
-    selection = $(this).parent().parent().attr("id");
+    selection = $(this).parent().attr("id");
     selection = parseInt(selection);
     localStorage.setItem("selectedIndex", selection);
     window.location.href = "./plan.html";

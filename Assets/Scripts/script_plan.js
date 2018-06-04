@@ -12,6 +12,7 @@ selectionLong = selectionData.Long;
 selectionLong = parseFloat(selectionLong);
 selectionLat = selectionData.Lat;
 selectionLat = parseFloat(selectionLat);
+selectionName = selectionData.name;
 
 console.log(selectionData + selectionLong +selectionLat);
 
@@ -118,7 +119,7 @@ function initMap() {
             map: map
         });
 
-        //console.log(savedRest[i].lat)
+
 
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
@@ -131,13 +132,13 @@ function initMap() {
     marker = new google.maps.Marker({
         position: new google.maps.LatLng(selectionLat, selectionLong),
         map: map,
-        icon: "../assets/images/birdpairs.png"
-        //icon: "https://clipart.info/images/ccovers/1495916677round-star-png-image-yellow.png",
+        icon: "http://www.myiconfinder.com/uploads/iconsets/48-48-82e4254475da730a5e11a7fc3ca487da-star.png",
+        zIndex: 1000 
     });
 
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
-        infowindow.setContent(savedConcert.name);
+        infowindow.setContent(savedKeyword);
         infowindow.open(map, marker);
         }
     })(marker, i));

@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
     <!-- Our own CSS stylesheet -->
-    <link rel="stylesheet" href="assets/Styles/style-plan.css" media="screen">
-    <link rel="stylesheet" href="assets/Styles/style-all.css" media="screen">
+    <link rel="stylesheet" href="Assets/Styles/style-plan.css" media="screen">
+    <link rel="stylesheet" href="Assets/Styles/style-all.css" media="screen">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
    </head>
 
@@ -22,7 +22,7 @@
     <!-- NAVBAR -->
     <nav class="top-nav navbar navbar-expand-lg navbar-dark navbar-fixed-top">
       <div class="nav-logo">
-        <h1>Concert Bird<img src="assets/images/birdpairs.png"></h1>
+        <h1>Concert Bird <img src="Assets/Images/birdpairs.png"></h1>
       </div>
 
       <div class="nav-links">
@@ -32,23 +32,29 @@
     </nav>
 
     <!-- div for selected ticket information !-->
-      <section class="container col-md-6">
+    <section class="container col-md-6">
+      <div>
+        <h2>Search Result for: <span id="usr-search"></span></h2>
+      </div>
+  
+      <div class="space-marg rounded border border-secondary" id="selectedHolder">
+        <div class="result-bar-inner1 div1">
+          <div class="result-bar-inner2 div1-1">
+            <div id="selectedDate"></div>
+            <div id="selectedTime"></div>
+          </div>
+          <div class="result-bar-inner2 div1-2">
+            <div id="selectedLoc"></div>
+            <div id="selectedVen"></div>
+          </div>
+        </div> 
 
-        <div>
-          <h2>Search Result for: <span id="usr-search"></span></h2>
-        </div>
+        <div class="result-bar-inner1 div2" id="selectedLinkHolder">
+          <button id="selectedLink">Click To Purchase</button>
+        </div>      
+      </div>   
+    </section>
 
-
-        <div class="optionHolder space-marg rounded border border-secondary">
-            <div id="selectedHolder">
-                <div class="optionDate" id="selectedDate"></div>
-                <div class="optionTime" id="selectedTime"></div>
-                <div class="optionLoc" id="selectedLoc"></div>
-                <div class="optionVen" id="selectedVen"></div>
-                <div class="optionLink" id="selectedLink"></div>
-              </div>
-        </div>   
-      </section>
 
     <!-- CLICK RESULT -->
     <div class="container">
@@ -66,6 +72,13 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2fqdkmA9qUXkDg9zKMF2wmnwN4IkykSg&libraries=places&callback=initialize"></script>
     <script src="Assets/Scripts/script_plan.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2fqdkmA9qUXkDg9zKMF2wmnwN4IkykSg&libraries=places&callback=initialize"></script>
+  
+  <script src="Assets/Scripts/script_planTicket.js"></script>
+  <script src="Assets/Scripts/scriptGoogleRestaurants.js"></script>
+  
 
   </body>
 </html>

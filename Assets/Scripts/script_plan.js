@@ -1,11 +1,30 @@
 
-var restaurantResultList = [], savedResult, selection;
+var restaurantResultList = [], savedResult, selectionData, selectionIndex, selectionLong, selectionLat;
 
-// var savedConcert = localStorage.getItem("selectedIndex");
-// savedConcert= JSON.parse(savedConcert);
+//added scripts for pushing selected concert info on page
+savedResult = localStorage.getItem("resultList");
+selectionIndex = localStorage.getItem("selectedIndex");
+savedResult = JSON.parse(savedResult);
 
-//FOR TESTING
-var savedConcert = {lat:-33.856159, lng:151.215256}
+selectionData = savedResult[selectionIndex];
+selectionLong = selectionData.Long;
+selectionLong = parseFloat(selectionLong);
+selectionLat = selectionData.Lat;
+selectionLat = parseFloat(selectionLat);
+
+console.log(selectionData + selectionLong +selectionLat);
+
+$("#selectedDate").text(selectionData.Date);
+$("#selectedTime").text(selectionData.Time);
+$("#selectedLoc").text(selectionData.City + " " + selectionData.Country);
+$("#selectedVen").text(selectionData.Venue);
+
+$("#selectedLink").on("click", function() {
+  window.location.href(selectionData.Purchase);
+})
+
+// taking long and lat info of the selected results
+var savedConcert = {lat: selectionLong, lng: selectionLong}
 
 function initialize() {
     getRelevantGoogleReviews();
